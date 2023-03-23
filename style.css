@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Deca", sans-serif;
+  border: 0 solid black;
+}
+
+body {
+  background-color: var(--Very-light-gray);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.container-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 915px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.column-one,
+.column-two,
+.column-three {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.column-one {
+  background-color: var(--bright-orange);
+}
+
+.column-two {
+  background-color: var(--dark-cyan);
+}
+
+.column-three {
+  background-color: var(--very-dark-cyan);
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 40px;
+  color: var(--Very-light-gray);
+}
+
+p {
+  font-size: 15px;
+  font-weight: 100;
+  color: var(--transparent-white);
+  margin-bottom: 50px;
+  margin-right: 15px;
+  line-height: 1.8em;
+}
+
+.button {
+  cursor: pointer;
+  width: 145px;
+  height: 50px;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+
+.button:hover {
+  border: 2px solid var(--transparent-white);
+  background: none;
+  color: var(--transparent-white);
+}
+
+.button__column-one {
+  color: var(--bright-orange);
+}
+
+.button__column-two {
+  color: var(--dark-cyan);
+}
+
+.button__column-three {
+  color: var(--very-dark-cyan);
+}
+
+.attribution {
+  color: var(--dark-cyan);
+  position: fixed;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 15px;
+  z-index: 1;
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 500px) {
+  .container-columns {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 1320px;
+    width: 90%;
+    margin: 10vh 0;
+  }
+
+  .attribution {
+    background-color: var(--transparent-white);
+  }
+}
